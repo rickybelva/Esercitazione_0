@@ -1,0 +1,18 @@
+Osservazioni sull'esercitazione 5
+
+Sono stati confrontati i tempi medi di esecuzione di bubblesort, selectionsort, insertionsort,
+quicksort, mergesort, quicksort_hybrid e std::sort() su 100 vettori casuali per ogni dimensione.
+Le misure sono state effettuate preallocando 100 vettori per ogni dimensione, ordinandoli tutti
+all'interno di un ciclo e misurando il tempo totale con tic()/toc() all'esterno del ciclo, come
+richiesto dalla traccia. Il tempo medio e' stato ottenuto dividendo il tempo totale per il numero
+di vettori.
+Dai risultati attesi si osserva che:
+- per vettori molto piccoli gli algoritmi quadratici possono essere competitivi, in particolare
+  insertionsort;
+- al crescere della dimensione quicksort e mergesort diventano sensibilmente piu' veloci degli
+  algoritmi quadratici;
+- una versione ibrida di quicksort che sotto una certa soglia usa insertionsort puo' migliorare
+  le prestazioni sui vettori piccoli;
+- std::sort() risulta in genere piu' veloce delle implementazioni scritte manualmente.
+La soglia fissata per quicksort_hybrid e' 16, che è stata scelta dopo aver osservato i risultati sperimentali ottenuti in
+modalita' Debug e Release.
